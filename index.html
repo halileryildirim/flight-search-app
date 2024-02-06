@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Uçuş Arama</title>
+</head>
+
+<body>
+    <h1>Uçuş Arama</h1>
+    <form id="flight-search-form">
+        <label for="departure-airport">Kalkış Havaalanı:</label>
+        <input type="text" id="departure-airport" name="departure-airport" placeholder="Özellikleri kontrol etmek için JFK giriniz." required>
+
+        <label for="arrival-airport">Varış Havaalanı:</label>
+        <input type="text" id="arrival-airport" name="arrival-airport" placeholder="Özellikleri kontrol etmek için LHR giriniz." required>
+
+        <label for="departure-date">Kalkış Tarihi:</label>
+        <input type="date" id="departure-date" name="departure-date" required>
+
+        <label for="return-date">Dönüş Tarihi:</label>
+        <input type="date" id="return-date" name="return-date" disabled>
+
+        <div id="one-way-container">
+            <input type="checkbox" id="one-way" name="one-way" checked="true">
+            <label for="one-way">Tek Yönlü Uçuş</label>
+        </div>
+
+
+        <button type="submit">Ara</button>
+    </form>
+
+    <div id="sort-options">
+        <label for="sort-select">Sıralama:</label>
+        <select id="sort-select">
+            <option value="departureTime">Kalkış Saatine Göre</option>
+            <option value="arrivalTime">Varış Saatine Göre</option>
+            <option value="duration">Uçuş Süresine Göre</option>
+            <option value="price">Fiyata Göre</option>
+        </select>
+    </div>
+
+    <div id="search-results">
+        <h2>Arama Sonuçları</h2>
+        <ul id="results-list"></ul>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>
